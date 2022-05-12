@@ -8,7 +8,8 @@ const maxSize = 200;
 
 const circleImage = new Image();
 
-let circleArray = [];
+let circleArray = new Array("images/1.png", "images/2.png", "images/3.png");
+let randomNum = Math.floor(Math.random() * circleArray.length);
 
 class SpinningCircle{
     constructor(){
@@ -19,7 +20,7 @@ class SpinningCircle{
         this.rotation = 0; //rotating around a circle
         this.opacity = 1;
         this.size = Math.random() * 3;
-        this.image = "images/1.png";
+        this.image = circleArray[randomNum];
     }
     update(){
         this.rotation += 1;
@@ -76,3 +77,4 @@ function animate(){
 
 init();
 animate();
+spawnSpinningCircle();
